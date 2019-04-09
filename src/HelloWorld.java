@@ -32,11 +32,12 @@ public class HelloWorld extends HttpServlet {
         resp.setContentType("text/html");
 
         //设置逻辑实现
-//        PipedWriter out = resp.getWriter();
-        PrintWriter out = resp.getWriter();
-        System.out.println("<h1>" + message + "</h1>");
-
+//        PrintWriter out = resp.getWriter();
+//        System.out.println("<h1>" + message + "</h1>");
+        PrintWriter pw = resp.getWriter();
+        pw.print("<h1>" + message + "</h1>");;
     }
+
 
     @Override
     public void destroy(){
