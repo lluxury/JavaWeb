@@ -1,0 +1,6 @@
+
+回顾下 Servlet 毕竟之前用的时候还在用 eclipse
+
+新建工程
+java企业项目 -> 选jdk -> 选java ee -> 选tomcat
+Web Application 
