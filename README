@@ -133,6 +133,7 @@ JSESSIONID=AE95DC65642C5B1D37F57AA2FCDDF4A1;
 
 // 请求,产生标识JSESSIONID,设置值,返回响应
 
+
  session.setAttribute("name", "Jeff"); 
 
 http://localhost:8080/JavaWeb/sessionByCookie
