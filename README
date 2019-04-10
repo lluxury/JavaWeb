@@ -89,3 +89,60 @@ JSESSIONID=AE95DC65642C5B1D37F57AA2FCDDF4A1;
 
 // 所以要做判0
 
+
+// 服务器发送,
+// 信息记录,会伴随request同时发给服务器
+
+
+
+
+
+
+
+
+// Session
+// HTTP的无状态，每次请求都是独立的线程 ?
+
+// 选择了A商品，加入购物车，这就是A线程
+// 选择B商品就是B线程,每次线程独立，线程A不知道有B，如何一起付款呢？
+
+
+// 保存同个用户多个请求会话状态
+
+
+// EJB(有状态会话bean保存会话状态) 需要带EJB的J2EE服务器，不是Tomcat这种Web容器
+// 数据库
+// HttpSession，保存跨一个特定用户多个请求的会话状态
+// HTTPS ?
+
+
+
+// Session机制
+// Session代表着服务器和客户端一次会话的过程。直到session失效（服务端关闭）
+
+
+// Session 是存储在服务端的
+    // 针对每个客户端（客户），通过SessionID来区别不同用户
+    // Session是以Cookie技术或URL重写实现
+    // 默认以Cookie技术实现，服务端会给这次会话创造一个JSESSIONID的Cookie值
+
+
+// 表单隐藏字段
+// 服务器响应前，会修改form表单，添加一个sessionID类似的隐藏域，以便传回服务端的时候可以标示出此会话
+// 使用在Web安全上，可以有效地控制CSRF跨站请求伪造
+
+// 请求,产生标识JSESSIONID,设置值,返回响应
+
+ session.setAttribute("name", "Jeff"); 
+
+http://localhost:8080/JavaWeb/sessionByCookie
+// Hello,HttpSession! <br>The first response - SessionID=98C3F1E774E1D21007EB8518BC627F97<br>
+
+// Hello, HttpSession! <br> The second response - Sessionid=48D34CA20F3DF59D0A6648F8EFC28414<br>
+// The seconde-response -name:Jeff
+
+// 相关
+sessionId
+session.getAttribute("name")
+
+// 如果没成功,手动删除cookie再试
